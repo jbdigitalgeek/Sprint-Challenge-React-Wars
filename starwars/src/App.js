@@ -33,12 +33,14 @@ class App extends Component {
     const charList = this.state.starwarsChars;
     return (
       <div className="App">
+        <div className="container">
         <h1 className="Header">React Wars</h1>
-        <h2 className="Header"></h2>
+        <h2 className="subHeader">Rendered using SWAPI</h2>
         <div>
           {charList.map(char => (
             <Character key={char.created} charProp={char} />
           ))}
+          </div>
         </div>
       </div>
     );

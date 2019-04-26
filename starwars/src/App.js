@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.scss";
-import characterList from './CharacterList';
 import Character from "./components/Character";
 
 class App extends Component {
@@ -11,7 +10,7 @@ class App extends Component {
     };
   }
   componentDidMount() {
-    this.getCharacters("https://swapi.co/api/people/");
+    this.getCharacters("https://swapi.co/api/people/", );
   }
 
   getCharacters = URL => {

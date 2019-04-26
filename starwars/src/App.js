@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from "react";
+import "./App.scss";
+import Character from "./components/Character";
 
 class App extends Component {
   constructor() {
@@ -8,9 +9,8 @@ class App extends Component {
       starwarsChars: []
     };
   }
-
   componentDidMount() {
-    this.getCharacters('https://swapi.co/api/people/');
+    this.getCharacters("https://swapi.co/api/people/", );
   }
 
   getCharacters = URL => {
@@ -30,12 +30,20 @@ class App extends Component {
   };
 
   render() {
+    const charList = this.state.starwarsChars;
     return (
       <div className="App">
+        <div className="container">
         <h1 className="Header">React Wars</h1>
+        <h2 className="subHeader">Rendered using SWAPI</h2>
+        <div>
+          {charList.map(char => (
+            <Character key={char.created} charProp={char} />
+          ))}
+          </div>
+        </div>
       </div>
     );
   }
 }
-
 export default App;
